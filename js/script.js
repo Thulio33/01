@@ -1,6 +1,6 @@
-function eviarFormulario(event){
-    event.preventDeFault();
-    const none =document.getElementById('nomeContato').value;
+function enviarFormulario(event){
+    event.preventDefault();
+    const nome =document.getElementById('nomeContato').value;
     const email=document.getElementById('emailContato').value; 
     const telefone=document.getElementById('telefoneContato').value;
 
@@ -11,7 +11,7 @@ function eviarFormulario(event){
     telefone: ${telefone}
     `;
 
-    document.getElementById('mensagem-Confirmacao').innerHTML = mensagem;
+    document.getElementById('mensagem-confirmacao').innerHTML = mensagem;
 }
 
 function mostrarFatoGato() {
