@@ -15,19 +15,23 @@ function enviarFormulario(event){
 }
 
 function mostrarFatoGato() {
+    console.log('chegou na funçao')
     fetch("https://catfact.ninja/fact")
-    then(resposta => resposta.json())
-    then(dados =>{
+    .then(resposta => resposta.json())
+    .then(dados =>{
+         console.log('chegou na funçao',dados)
         document.getElementById('fato-gato').innerText = dados.fact;
      } )
      .catch(erro => console.error('erro ao buscar fato do gato:',erro));
 }
 
-function mostrarImagemCachorro(){
-    fetch("https://dog.ceo/api/breeeds/image/random")
+function mostrarImagemCachorro() {
+    console.log('chegou na funçao')
+    fetch("https://dog.ceo/api/breeds/image/random")
     .then(resposta => resposta.json())
     .then(dados => {
-        document.getElementById('imagem-cachorro').scr = dados.menssagem;
+         console.log('chegou na funçao',dados)
+        document.getElementById('imagem-cachorro').src = dados.message;
     })
     .catch(erro => console.error('erro ao buscar imagem do cachorro:', erro));
 }
