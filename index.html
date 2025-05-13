@@ -1,45 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <title>Meu primeiro Site</title>
-        <link rel="stylesheet" href="css/estilo.css">    
-    </head>
-    <body>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Soma de Dois Números</title>
+    <style>
+        body {
+            font-family: Arial,sans-serif;
+            margin: 40px;
+        }
+        input, button{
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Soma</h1>
 
-    <header>
-        <h1>MUNDO PET</h1>
-    </header>
+    <label for="Numero1">Numero 1</label>
+    <input type="number" id="numero1"><br>
+
+    <label for="numero2">Numero 2:</label>
+    <input type="number" id="numero2"><br>
+
+    <button onclick="somar()">Somar</button>
+
+    <h2>Resultado: <span id="resultado"></span></h2>
+
     
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="sobre.html">sobre</a>
-        <a href="contato.html">contato</a>
-    </nav>
+    <script>
+        function somar(){
+            const n1 = parseFloat(document.getElementById("numero1").value);
+            const n2 = parseFloat(document.getElementById("numero2").value);
 
-    <main>
-        <section>
-            <h2>Gatos - curiosidades</h2>
+            if (isNaN(n1) || isNaN(n2)) {
+                alert("Digite dois números válidos!");
+                return;
+            }
 
-
-            <button onclick="mostrarFatoGato()">Mostrar curiosidade  de gato</button>
-            <p id="fato-gato"></p>
-        
-
-            <h2>CACHORROS - TOP 10 MAIS LINDOS</h2>
-            <button onclick="mostrarImagemCachorro()">mostrar Imagem de Cachorro</button>
-            <br><br>
-            <img id="imagem-cachorro" src="" alt="Cachorro aleatório" width="300">
-        </section>
-
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Thulio Felipe. Todos os direitos reservado.</p>
-    </footer>
-
-    <script src="js/script.js"></script>
-    </body>
-    </html>
-
- 
+            const resultado = n1 + n2;
+            document.getElementById("resultado").innerText = resultado;
+        }
+    </script>
+</body>
+</html>
